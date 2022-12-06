@@ -4,21 +4,17 @@ public class CarreraComposite extends OfertaAcademica{
 
     private ArrayList<Curso> cursos = new ArrayList();
 
+    private double porcentajeDeBonificacion;
+
+    //Methods
+
     @Override
     public double calcularPrecio() {
         double aux = 0;
         for (OfertaAcademica of:cursos){
             aux += of.calcularPrecio();
         }
-        return aux;
-    }
-
-    public double calcularPrecio(double descuento) {
-        double aux = 0;
-        for (OfertaAcademica of:cursos){
-            aux += of.calcularPrecio();
-        }
-        return aux - (aux / 100 * descuento);
+        return aux - ( (aux * porcentajeDeBonificacion) / 100 );
     }
 
     public void agregarCurso(OfertaAcademica curso){
@@ -29,12 +25,15 @@ public class CarreraComposite extends OfertaAcademica{
         this.cursos.remove(curso);
     }
 
-    public String mostrarCurso(){
-        String cursosImpl = "";
-        for (OfertaAcademica of:cursos) {
-            cursosImpl+= "\n "+ "- " + of.nombre;
-        }
-        return cursosImpl;
+    // Getters and Setters
+
+
+    public double getPorcentajeDeBonificacion() {
+        return porcentajeDeBonificacion;
+    }
+
+    public void setPorcentajeDeBonificacion(double porcentajeDeBonificacion) {
+        this.porcentajeDeBonificacion = porcentajeDeBonificacion;
     }
 
     public ArrayList<Curso> getCursos() {

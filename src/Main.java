@@ -27,14 +27,14 @@ public class Main {
         carreraFullStack.setDescripcion("Algo para probar carrera");
         carreraFullStack.agregarCurso(cursoFrontEnd);
         carreraFullStack.agregarCurso(cursoBackEnd);
-        carreraFullStack.setCosto(carreraFullStack.calcularPrecio(20));
-        System.out.println("Precio $" + carreraFullStack.getCosto());
+        carreraFullStack.setPorcentajeDeBonificacion(20);
+        System.out.println("Precio $" + carreraFullStack.calcularPrecio());
 
         System.out.println("\nINSTITUTO:");
         Instituto ins = new Instituto();
         ins.agregarCurso(cursoBackEnd);
         ins.agregarCurso(cursoFrontEnd);
-        ins.agregarCarrera(carreraFullStack);
+        ins.agregarCurso(carreraFullStack);
         System.out.println(ins.generarInforme());
     }
 }

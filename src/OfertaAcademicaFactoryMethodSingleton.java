@@ -1,6 +1,7 @@
 public class OfertaAcademicaFactoryMethodSingleton {
     private static OfertaAcademicaFactoryMethodSingleton instancia;
 
+    // Methods
     private OfertaAcademicaFactoryMethodSingleton(){}
 
     public static OfertaAcademicaFactoryMethodSingleton obtenerInstancia(){

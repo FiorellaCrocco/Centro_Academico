@@ -4,6 +4,7 @@ public class Curso extends OfertaAcademica{
     private int mesesDeDuracion;
     private double valorHora;
 
+    // Getters and Setters
     @Override
     public double calcularPrecio() {
         return this.cargaHorariaMensual * this.valorHora * this.mesesDeDuracion;

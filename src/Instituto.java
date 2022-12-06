@@ -3,16 +3,12 @@ import java.util.ArrayList;
 public class Instituto {
     private ArrayList<OfertaAcademica> ofertaAcademica = new ArrayList();
 
+    // Methods
     public String generarInforme(){
         String aux = "";
 
         for (OfertaAcademica of:this.ofertaAcademica) {
-
-            if (of.getNombre().equals("Full Stack")){
-                aux += of.nombre + " " + of.getCosto() + "\n ";
-            } else {
-                aux += of.getNombre() + " " + of.calcularPrecio() + "\n ";
-            }
+                aux += of.getNombre() + " " + of.calcularPrecio()+ "\n ";
         }
 
         return "CURSOS Y CARRERAS: " + "\n " + aux;
@@ -20,23 +16,18 @@ public class Instituto {
 
     public void agregarCurso(OfertaAcademica curso){
         this.ofertaAcademica.add(curso);
-    }
+    } // SIRVE TANTO PARA CURSOS O CARRERAS
 
     public void quitarCurso(OfertaAcademica curso) {
         this.ofertaAcademica.remove(curso);
-    }
+    } // SIRVE TANTO PARA CURSOS O CARRERAS
 
-
-    public void agregarCarrera(OfertaAcademica curso){
-        this.ofertaAcademica.add(curso);
-    }
-
-    public void quitarCarrera(OfertaAcademica curso) {
-        this.ofertaAcademica.remove(curso);
-    }
-
-   /* public ArrayList<OfertaAcademica> getOfertaAcademica() {
+    // Getters and Setters
+    public ArrayList<OfertaAcademica> getOfertaAcademica() {
         return ofertaAcademica;
-    }*/
+    }
 
+    public void setOfertaAcademica(ArrayList<OfertaAcademica> ofertaAcademica) {
+        this.ofertaAcademica = ofertaAcademica;
+    }
 }
